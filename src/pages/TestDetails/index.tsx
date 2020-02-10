@@ -27,7 +27,8 @@ const Tests = ({ tests }: TestsProps) => {
         <li className={styles.testsItem}>
           <Card title={description}>
             {() => {
-              const formatted = prettier.format(code, { plugins: [parser] });
+              // const formatted = prettier.format(code, { plugins: [parser] });
+              const formatted = code;
               const tags = (metadata && metadata.tags) || [];
 
               return (

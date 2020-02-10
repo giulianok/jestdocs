@@ -24,10 +24,10 @@
     "typescript": "~3.7.2"
   },
   "scripts": {
-    "startx": "react-scripts start",
+    "start:only": "react-scripts start",
     "start": "npm run test && react-scripts start",
     "build": "react-scripts build",
-    "test": "rm -rf ./.tmpReport && react-scripts test --watchAll=false --coverage",
+    "test": "rm -rf ./.tmpReport && react-scripts test --watchAll=false --coverage --runInBand",
     "test2": "jest",
     "eject": "react-scripts eject"
   },

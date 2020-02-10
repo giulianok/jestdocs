@@ -27,3 +27,10 @@
 .results {
   margin-top: 50px;
 }
+
+.link {
+  display: block;
+  width: 100%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}

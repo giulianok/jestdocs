@@ -14,7 +14,7 @@ interface TestData {
   }[];
 }
 
-const Context = React.createContext<TestData[]>(data);
+const Context = React.createContext(data);
 
 interface Props {
   children: any;
