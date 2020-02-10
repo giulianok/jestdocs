@@ -24,9 +24,11 @@
     "typescript": "~3.7.2"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "startx": "react-scripts start",
+    "start": "npm run test && react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "rm -rf ./.tmpReport && react-scripts test --watchAll=false --coverage",
+    "test2": "jest",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -53,5 +55,8 @@
     "glob": "^7.1.6",
     "@types/react-syntax-highlighter": "^11.0.4",
     "@types/reactstrap": "^8.4.1"
+  },
+  "jest": {
+    "globalTeardown": "<rootDir>/globalTeardown.js"
   }
 }

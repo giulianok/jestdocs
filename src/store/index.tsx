@@ -1,6 +1,6 @@
 import React from 'react';
 
-import data from 'data/fakeOutput.json';
+import data from 'data/output.json';
 
 interface TestData {
   fileName: string;
@@ -30,7 +30,7 @@ export const useMenu = () => {
   return data;
 };
 
-export const useTestDetails = (slug: string) => {
+export const useTestDetails = (slug: string): TestData | undefined => {
   const data = React.useContext(Context);
 
   return data.find(({ fileName }) => slug === fileName);

@@ -1,3 +1,5 @@
 module.exports = {
-  watchPlugins: ['./jestDocsPlugin'],
+  preset: 'ts-jest',
+  testEnvironment: 'node',
+  reporters: ['./my-custom-reporter.js']
 };
