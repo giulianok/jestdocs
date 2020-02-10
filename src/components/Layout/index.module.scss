@@ -1,5 +1,10 @@
-// @import '../../../node_modules/shards-ui/src/scss/variables';
-
 .root {
   display: flex;
+  width: 100%;
+  padding-left: 300px;
+}
+
+.content {
+  width: 100%;
+  padding: 35px;
 }
