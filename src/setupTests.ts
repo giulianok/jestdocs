@@ -10,7 +10,7 @@ const getFilePath = (fileName: string) => {
 };
 
 if (jestTest != null) {
-  const newTest = (description: string, cb: Function, fileName: any = '') => {
+  const newTest = (description: string, cb: Function) => {
     jestTest(description, cb);
 
     let test = {
@@ -23,7 +23,7 @@ if (jestTest != null) {
         tags: []
       },
       withMetaData: utils.withMetaData(() => {
-        console.log(JSON.stringify(collection, null, 2));
+        // console.log(JSON.stringify(collection, null, 2));
       })
     };
 
