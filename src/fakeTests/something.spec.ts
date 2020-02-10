@@ -9,7 +9,6 @@ const hi = test(
     documentation: "this is some test docs",
     tags: ["tag1", "tag2"]
   });
-console.log(hi)
 
 test(
   'returns "blah"',

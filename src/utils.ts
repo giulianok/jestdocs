@@ -1,8 +1,10 @@
 import deepmerge from "deepmerge";
 
 export default {
-  withMetaData: function(fileName, metaData: any) {
-    (this as any).metaData = deepmerge((this as any).metaData, metaData);
-    console.log((this as any).metaData)
-  }
+    withMetaData: function (cb: Function) {
+        return function(fileName, metaData: any) {
+            (this as any).metaData = deepmerge((this as any).metaData, metaData);
+            cb && cb();
+        }
+    }
 };

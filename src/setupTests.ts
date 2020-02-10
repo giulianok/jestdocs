@@ -21,7 +21,9 @@ if (jestTest != null) {
       },
       code: cb.toString(),
       type: "test",
-      withMetaData: utils.withMetaData
+      withMetaData: utils.withMetaData(() => { 
+        console.log(collection)
+      })
     };
     collection.push(test);
     return test;
