@@ -9,6 +9,8 @@
     "@testing-library/user-event": "^7.1.2",
     "@types/jest": "^24.0.0",
     "@types/node": "^12.0.0",
+    "deepmerge": "^4.2.2",
+    "lodash.union": "^4.6.0",
     "classnames": "^2.2.6",
     "node-sass": "^4.13.1",
     "prettier": "^1.19.1",
@@ -47,6 +49,7 @@
     "@types/reach__router": "^1.2.6",
     "@types/react": "^16.9.19",
     "@types/react-dom": "^16.9.5",
+    "glob": "^7.1.6",
     "@types/react-syntax-highlighter": "^11.0.4",
     "@types/reactstrap": "^8.4.1"
   }
