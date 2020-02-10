@@ -6,10 +6,11 @@ import styles from './index.module.scss';
 interface Props {
   title: string;
   children: () => any;
+  defaultState?: boolean;
 }
 
-const Card = ({ title, children }: Props) => {
-  const [isOpen, setIsOpen] = React.useState(true);
+const Card = ({ title, children, defaultState }: Props) => {
+  const [isOpen, setIsOpen] = React.useState(defaultState);
 
   return (
     <div className={styles.root}>
@@ -26,6 +27,10 @@ const Card = ({ title, children }: Props) => {
       {isOpen && <div className={styles.content}>{children()}</div>}
     </div>
   );
+};
+
+Card.defaultProps = {
+  defaultState: true
 };
 
 export default Card;
