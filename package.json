@@ -40,6 +40,11 @@
       "last 1 safari version"
     ]
   },
+  "jest": {
+    "watchPlugins": [
+      "./jest.config.js"
+    ]
+  },
   "devDependencies": {
     "@types/react": "^16.9.19",
     "@types/react-dom": "^16.9.5"
