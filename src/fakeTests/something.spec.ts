@@ -9,4 +9,4 @@ test('returns "che!"', () => {
 
 test('returns "blah"', () => {
   expect(something(7)).toBe('blah');
-});
+}).withMetaData('something', {});
