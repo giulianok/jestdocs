@@ -1,0 +1,29 @@
+@import '../../variables';
+
+.root {
+  position: fixed;
+  width: 300px;
+  height: 100%;
+  top: 0;
+  left: 0;
+  padding: 20px;
+  background-color: $gray-300;
+}
+
+.logo {
+  display: block;
+  color: $indigo;
+  padding-bottom: 20px;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+
+  &:hover {
+    text-decoration: none;
+    color: $indigo;
+  }
+}
+
+.results {
+  margin-top: 50px;
+}

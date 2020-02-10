@@ -12,7 +12,7 @@ const Layout = ({ children }: Props) => {
   return (
     <div className={styles.root}>
       <Menu />
-      {children}
+      <div className={styles.content}>{children}</div>
     </div>
   );
 };

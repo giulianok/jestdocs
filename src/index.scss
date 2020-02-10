@@ -11,3 +11,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 } */
+
+@import './variables';
+
+html,
+body {
+  font-size: 17px;
+  background-color: $gray-200;
+}
