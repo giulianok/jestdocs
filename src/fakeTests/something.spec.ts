@@ -1,28 +1,19 @@
-import something from './something';
-test(
+import something from "./something";
+const hi = test(
   'returns "che!"',
   () => {
-    expect(something(15)).toBe('che!');
+    expect(something(15)).toBe("che!");
   },
-  {
-    metaData: {
-      fileName: "something",
-      tags: ['code', 'stuff', 'useless']
-    },
-    aloja: true
-  }
-);
+  "something"
+).withMetaData("something", {
+    documentation: "this is some test docs",
+    tags: ["tag1", "tag2"]
+  });
+console.log(hi)
 
 test(
   'returns "blah"',
   () => {
-    expect(something(7)).toBe('blah');
-  },
-  {
-    metaData: {
-      fileName: "something",
-      tags: ['more', 'stuff', 'here']
-    },
-    something: true
+    expect(something(7)).toBe("blah");
   }
 );

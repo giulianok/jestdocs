@@ -1,37 +1,30 @@
-import '@testing-library/jest-dom/extend-expect';
-import union from "lodash.union"
-import deepmerge from "deepmerge";
+import "@testing-library/jest-dom/extend-expect";
+import utils from "../src/utils";
 
 const glob = require("glob");
 const jestTest = (global as any).test;
-let collection = {};
+let collection = [];
 let graph = {};
 
 const getFilePath = (fileName) => {
-  let files = glob.sync(`**/${fileName}*.spec.ts`);
+  return glob.sync(`**/${fileName}*.spec.ts`)[0];
 }
 
 if (jestTest != null) {
-  const newTest = (description: string, cb: Function, data: any = {
-    metadata: {}
-  }) => {
+  const newTest = (description: string, cb: Function, fileName: any = "") => {
     jestTest(description, cb);
-    const fileName = data?.metaData?.fileName || "global";
-    if(!collection[fileName]) {
-      collection[fileName] = data;
-      collection[fileName].tests = [];
-      collection[fileName].metadata = {
-        ...(collection[fileName].metadata || {}),
+    let test = {
+      metaData: {
+        tags: [],
+        fileName: fileName,
         filePath: getFilePath(fileName)
-      };
-    } else {
-      collection[fileName].metaData = deepmerge(collection[fileName].metaData, data.metaData);
-    }
-    collection[fileName].tests.push({
-      type: "test",
+      },
       code: cb.toString(),
-      metadata: data.metaData
-    });
+      type: "test",
+      withMetaData: utils.withMetaData
+    };
+    collection.push(test);
+    return test;
   };
   (global as any).test = newTest;
 } else {
